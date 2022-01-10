@@ -11,22 +11,26 @@ function App() {
 
   const [center, setCenter] = useState([-104.991531, 39.742043]);
   const [zoom, setZoom] = useState(12);
-  const [showLayer1, setShowLayer1] = useState(true);
-  const [showLayer2, setShowLayer2] = useState(true);
+  // const [showLayer1, setShowLayer1] = useState(true);
+  // const [showLayer2, setShowLayer2] = useState(true);
 
   return (
   <>
     <Header/>
-        <Map center={fromLonLat(center)} zoom={zoom}>
-          <Layers>
-          <TileLayer
+    <div className="pageHead">
+      <h1 className='pageTitle'>Vivax Pros - In Your Area</h1>
+      <h2 className='pageDesc'>Explore the map to see where we have completed projects in your area.</h2>
+    </div>
+    <Map center={fromLonLat(center)} zoom={zoom}>
+      <Layers>
+        <TileLayer
           source={osm()}
           zIndex={0}
-          />
-          </Layers>
-        <Controls>
-          <FullScreenControl />
-        </Controls>
+        />
+      </Layers>
+      <Controls>
+        <FullScreenControl />
+      </Controls>
     </Map>
     </> 
   );
