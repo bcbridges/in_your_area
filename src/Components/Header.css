@@ -1,0 +1,59 @@
+.header {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #565656;
+    background-color: rgba(255,255,255,.85);
+    height: 140px;
+}
+
+.phoneNumber {
+    color: #003a8e;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.location {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+}
+
+.phoneContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.innerHeader {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content:space-around;
+}
+
+.mainNav {
+    box-shadow: 0 2px 8px 0 rgb(50 50 50 / 40%);
+    width: 100%;
+}
+
+.navList {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 7px;
+    list-style: none;
+    color: #003a8e;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Marcellus SC', serif;
+}
+
+p {
+    display: block;
+}
