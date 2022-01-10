@@ -1,11 +1,11 @@
-import Header from './Components/Header'
-import AreaMap from './Components/Map'
+import Header from './Components/Header';
+import Map from "./Components/Map"
 
 function App() {
   return (
     <>
     <Header />
-    <AreaMap />
+    <Map />
     </>  
   );
 }
