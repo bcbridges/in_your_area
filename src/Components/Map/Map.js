@@ -6,6 +6,9 @@ import {Point} from 'ol/geom'
 import {fromLonLat} from 'ol/proj'
 import {Vector} from 'ol/source'
 import * as layer from 'ol/layer'
+import * as style from 'ol/style'
+let {pinData} = require('../MarkerData/pins.js');
+
 
 const Map = ({ children, zoom, center }) => {
   
@@ -20,6 +23,17 @@ const Map = ({ children, zoom, center }) => {
         fromLonLat([-104.991531, 39.742043])
       ),
     });
+
+    marker.setStyle(new style.Style({
+      image: new style.Icon(({
+        src: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
+        crossOrigin: 'anonymous',
+        // actual size of the image
+        size: [512,512],
+        // scaled down
+        scale: 0.04,
+      }))
+    }))
 
     var vectorSource = new Vector({
       features: [marker]
