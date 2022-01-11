@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './Components/Header/Header';
 import {Layers, TileLayer, VectorLayer} from './Components/Layers';
 import { osm, vector } from "./Components/Source";
@@ -9,10 +9,34 @@ import './App.css';
 
 function App() {
 
-  const [center, setCenter] = useState([-104.991531, 39.742043]);
+  const [center, setCenter] = useState([-97.7431, 30.2672]);
   const [zoom, setZoom] = useState(12);
   // const [showLayer1, setShowLayer1] = useState(true);
   // const [showLayer2, setShowLayer2] = useState(true);
+
+  function getLocation() {
+      navigator.geolocation.getCurrentPosition(onSuccess);
+  }
+
+    function onSuccess(position) {
+        const {
+            latitude,
+            longitude
+        } = position.coords;
+
+        setCenter([longitude,latitude])
+        console.log(`Your location: (${latitude},${longitude})`);
+    };
+
+    useEffect(() => {
+    let currentLocation = getLocation();
+    if (typeof currentLocation === 'undefined'){
+      console.log("The current location came back undefined")
+      setCenter([-97.7431, 30.2672])
+    } else {
+      console.log(currentLocation);
+    }},[])
+
 
   return (
   <>

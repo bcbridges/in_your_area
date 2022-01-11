@@ -15,12 +15,13 @@ const Map = ({ children, zoom, center }) => {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
 
+
   useEffect(() => {
     if (!map) return;
     
     var vectorSource = new Vector("Overlay");
 
-  pinData.forEach((pin) => {
+    pinData.forEach((pin) => {
       let lattitude = pin.lat;
       let longitude = pin.lon;
 
@@ -41,18 +42,16 @@ const Map = ({ children, zoom, center }) => {
         }))
       }));
 
-      console.log(newMarker);
       vectorSource.addFeature(newMarker);
-  });
+    });
 
-  console.log(vectorSource)
     var markerVectorLayer = new layer.Vector({
       source: vectorSource,
     });
 
     map.addLayer(markerVectorLayer);
 
-       });
+    });
 
   // on component mount
   useEffect(() => {
