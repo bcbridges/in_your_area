@@ -18,33 +18,41 @@ const Map = ({ children, zoom, center }) => {
   useEffect(() => {
     if (!map) return;
     
-    var marker = new ol.Feature({
-      geometry: new Point(
-        fromLonLat([-104.991531, 39.742043])
-      ),
-    });
+    var vectorSource = new Vector("Overlay");
 
-    marker.setStyle(new style.Style({
-      image: new style.Icon(({
-        src: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
-        crossOrigin: 'anonymous',
-        // actual size of the image
-        size: [512,512],
-        // scaled down
-        scale: 0.04,
-      }))
-    }))
+  pinData.forEach((pin) => {
+      let lattitude = pin.lat;
+      let longitude = pin.lon;
 
-    var vectorSource = new Vector({
-      features: [marker]
-    })
+      var newMarker = new ol.Feature({
+        geometry: new Point(
+          fromLonLat([longitude, lattitude])
+        ),
+      });
 
+      newMarker.setStyle(new style.Style({
+        image: new style.Icon(({
+          src: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
+          crossOrigin: 'anonymous',
+          // actual size of the image
+          size: [512,512],
+          // scaled down
+          scale: 0.04,
+        }))
+      }));
+
+      console.log(newMarker);
+      vectorSource.addFeature(newMarker);
+  });
+
+  console.log(vectorSource)
     var markerVectorLayer = new layer.Vector({
       source: vectorSource,
     });
 
     map.addLayer(markerVectorLayer);
-  })
+
+       });
 
   // on component mount
   useEffect(() => {
