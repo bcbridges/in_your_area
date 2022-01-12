@@ -12,6 +12,7 @@ export default function Header () {
               <p className='location'>Choose another location</p>
             </div>
           </div>
+          <div className='menuDropdown'>Menu</div>
           <nav className='mainNav'>
               <ul className='navList'>
                   <li>Why Vivax</li>

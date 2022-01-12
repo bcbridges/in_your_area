@@ -57,3 +57,27 @@
 p {
     display: block;
 }
+
+.menuDropdown {
+    display: none;
+}
+
+@media screen and (max-width: 1030px){
+    .mainNav{
+        display: none;
+    }
+
+    .menuDropdown {
+        display: block;
+        background-color: #003a8e;
+        height: 5vh;
+        color: white;
+        text-align: center;
+        padding: 2vh 0 0 0;
+        font-size: 2vh;
+    }
+
+    .phoneContainer{
+        display: none;
+    }
+}
