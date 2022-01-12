@@ -9,7 +9,9 @@ The existing webpage can be found at https://vivaxpros.com/in-your-area/. Webpag
 ![Existing Webpage](./repo_assets/existing_webpage.PNG)
 
 ## Deployed Proof-of-Concept
-Project is currently under development. The deployed environment can be found [here](https://bcbridges.github.io/in_your_area/).
+The deployed environment can be found [here](https://bcbridges.github.io/in_your_area/).
+
+![Redesigned Webpage](./repo_assets/redesigned_webpage.PNG)
 
 ## Additional Credits
 A majority of the starter ol code is credited to [Matthew Brown](https://github.com/mbrown3321?tab=overview&from=2022-01-01&to=2022-01-10) - checkout his openlayers repo [here](https://github.com/mbrown3321/openlayers-react-map).
